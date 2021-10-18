@@ -5,16 +5,20 @@ fun main() {
     var PastResult: Long = 0 // результат сложения всех предидущих разрадов
     var newResult = longArrayOf(0, 0, 0, 0, 0, 0, 0, 0, 0,) // результат сложения текущего разряда (Res1, Res2, Res3...)
     var ResOb: Long = 0 // резьтат сложения всех разрядов (Res общий)
+    var sumResOb: Long = 0 // результат сложения всех последовательностей
     var PastResOb: Long = 0 // общей результат до прибавления числе текущего разряда
     var p: Long = 1
     var examination: Long = 0 // проверка (в результате проверки должно получиться 45)
     var examination2: Long = 0 // проверка 2 (в результате проверки должно получиться 45)
     // нужно поставить проверки после каждого цикла
+    var examinationSumResOb: Long = 0
     for(index in 1..9){
         result += index
     }
     println(result)
     ResOb = result
+    sumResOb += ResOb
+    println("sumResOb = $sumResOb")
     newResult[0] = ResOb
    // println("$newResult * $p = ${newResult*p}")
     println("p = $p")
@@ -32,6 +36,8 @@ fun main() {
     println("SumResult = $SumResult")
     println("p = $p")
     ResOb += (result - SumResult) * p
+    sumResOb += ResOb
+    println("sumResOb = $sumResOb")
     newResult[1] = ResOb - PastResult
     println("newResult = ${newResult[1]}")
     p++
@@ -53,6 +59,8 @@ fun main() {
      println(result)
      PastResOb = ResOb
      ResOb += (result - SumResult) * p // проблема с SumResult
+    sumResOb += ResOb
+    println("sumResOb = $sumResOb")
      newResult[2] = ResOb - PastResOb
      println("p = $p")
      println("newResult = ${newResult[1]}")
@@ -72,6 +80,8 @@ fun main() {
      println(result)
      PastResOb = ResOb
      ResOb += (result - SumResult) * p
+    sumResOb += ResOb
+    println("sumResOb = $sumResOb")
      newResult[3] = ResOb - PastResOb
      println("p = $p")
      println("newResult = ${newResult[3]}")
@@ -91,6 +101,8 @@ fun main() {
      println(result)
      PastResOb = ResOb
      ResOb += (result - SumResult) * p
+    sumResOb += ResOb
+    println("sumResOb = $sumResOb")
      newResult[4] = ResOb - PastResOb
      println("p = $p")
      println("newResult = ${newResult[4]}")
@@ -110,6 +122,8 @@ fun main() {
      println(result)
      PastResOb = ResOb
      ResOb += (result - SumResult) * p
+    sumResOb += ResOb
+    println("sumResOb = $sumResOb")
      newResult[5] = ResOb - PastResOb
      println("p = $p")
      println("newResult = ${newResult[5]}")
@@ -129,6 +143,8 @@ fun main() {
      println(result)
     PastResOb = ResOb
      ResOb += (result - SumResult) * p
+    sumResOb += ResOb
+    println("sumResOb = $sumResOb")
      newResult[6] = ResOb - PastResOb
      println("p = $p")
      println("newResult = ${newResult[6]}")
@@ -148,6 +164,8 @@ fun main() {
      println(result)
      PastResOb = ResOb
      ResOb += (result - SumResult) * p
+    sumResOb += ResOb
+    println("sumResOb = $sumResOb")
      newResult[7] = ResOb - PastResOb
      println("p = $p")
      println("newResult = ${newResult[7]}")
@@ -167,6 +185,8 @@ fun main() {
      println(result)
      PastResOb = ResOb
      ResOb += (result - SumResult) * p
+    sumResOb += ResOb
+    println("sumResOb = $sumResOb")
      newResult[8] = ResOb - PastResOb
      println("p = $p")
      println("newResult = ${newResult[8]}")
@@ -178,6 +198,9 @@ fun main() {
     println("ResOb = $ResOb")
     examination = ResOb  - newResult[8] - newResult[7] - newResult[6] - newResult[5] - newResult[4] - newResult[3] - newResult[2] - newResult[1]
     println("examination = $examination")
+
+    examinationSumResOb = sumResOb - 4494949490505050505 - 39949494555050505 - 349494915050505 - 2994946550505 - 24949250505 - 199475505 - 1493505 - 9855
+    println("examinationSumResOb = $examinationSumResOb")
 /*        for(index in 1..9999999999){
          result += index
      }
